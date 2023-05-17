@@ -13,7 +13,7 @@ const anecdoteSlice = createSlice({
       return state.map(anecdote => anecdote.id === action.payload ? {...anecdote, votes: anecdote.votes + 1} : anecdote)
     },
     addAnecdote: (state, action) => {
-      return state.push(action.payload)
+      return [...state, action.payload]
     }
   }
 })
