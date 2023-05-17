@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux'
-import { addVote } from '../reducers/anecdoteReducer'
+import { addVote } from '../reducers/anecdotesReducer'
 
 const Anecdote = ({id, content, votes}) => {
 
