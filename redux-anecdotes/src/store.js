@@ -1,12 +1,12 @@
-import { createStore, combineReducers } from 'redux'
-import anecdotesReducer from './reducers/anecdotesReducer'
-import filterReducer from './reducers/filterReducer'
+import { configureStore } from '@reduxjs/toolkit'
+import anecdoteSlice from './reducers/anecdotesReducer'
+import filterSlice from './reducers/filterReducer'
 
-const rootReducer = combineReducers({
-    anecdotes: anecdotesReducer,
-    filter: filterReducer
+const store = configureStore({
+    reducer: {
+        anecdotes: anecdoteSlice,
+        filter: filterSlice
+    }
 })
-
-const store = createStore(rootReducer)
 
 export default store
