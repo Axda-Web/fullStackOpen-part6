@@ -1,12 +1,18 @@
+import { useSelector } from 'react-redux'
+import { selectNotification } from '../reducers/notificationReducer'
+
 const Notification = () => {
+  const notification = useSelector(selectNotification)
   const style = {
     border: 'solid',
     padding: 10,
-    borderWidth: 1
+    borderWidth: 1,
+    marginBottom: 20,
+    display: notification !== null ? 'block' : 'none'
   }
   return (
     <div style={style}>
-      render here notification...
+      {notification}
     </div>
   )
 }
