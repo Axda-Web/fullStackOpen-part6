@@ -12,3 +12,8 @@ export const createNewAnecdote = async (content) => {
     const response = await axios.post(BASE_URL, newAnecdote)
     return response.data
 }
+
+export const voteAnecdote = async (anecdote) => {
+    const response = await axios.put(`${BASE_URL}/${anecdote.id}`, anecdote)
+    return response.data
+}
